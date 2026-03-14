@@ -1,0 +1,307 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffc8ba30fce, pid=16476, tid=28692
+#
+# JRE version:  (20.0.2+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.0.2+9-78, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x310fce]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xmx128m org.apache.spark.launcher.Main org.apache.spark.deploy.SparkSubmit --conf spark.driver.host=127.0.0.1 pyspark-shell
+
+Host: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 7G,  Windows 11 , 64 bit Build 26100 (10.0.26100.7705)
+Time: Fri Mar 13 22:52:01 2026 Eastern Daylight Time elapsed time: 0.073880 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000027585659560):  JavaThread "Unknown thread" [_thread_in_vm, id=28692, stack(0x000000c297500000,0x000000c297600000)]
+
+Stack: [0x000000c297500000,0x000000c297600000],  sp=0x000000c2975fed40,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x310fce]
+V  [jvm.dll+0x3118bd]
+V  [jvm.dll+0x66727b]
+V  [jvm.dll+0x66749e]
+V  [jvm.dll+0x666943]
+V  [jvm.dll+0x661dc6]
+V  [jvm.dll+0x812418]
+V  [jvm.dll+0x3c1261]
+V  [jvm.dll+0x7fe103]
+V  [jvm.dll+0x44ccaf]
+V  [jvm.dll+0x44e621]
+C  [jli.dll+0x5287]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8c40c]
+
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), reading address 0x0000000000000000
+
+
+Registers:
+RAX=0x00000043bc9a18c6, RBX=0x0000000000000000, RCX=0x0000000000000000, RDX=0x00007ffc8c09c101
+RSP=0x000000c2975fed40, RBP=0x0000000000000001, RSI=0x000002759830d368, RDI=0x0000000000000000
+R8 =0x0000000000000001, R9 =0x0000000000000001, R10=0x0000000000000000, R11=0x0000000000000246
+R12=0x0000000000000001, R13=0x000002758339acb0, R14=0x0000000000000001, R15=0x0000027597800000
+RIP=0x00007ffc8ba30fce, EFLAGS=0x0000000000010246
+
+
+Top of Stack: (sp=0x000000c2975fed40)
+0x000000c2975fed40:   0000000800c60000 0000027597800000
+0x000000c2975fed50:   0000027598460000 0000026d97800000
+0x000000c2975fed60:   0000000000000001 0000000000000001
+0x000000c2975fed70:   0000000000000000 0000000000000058
+0x000000c2975fed80:   00000043bc9a1936 00007ffc8ba2f44c
+0x000000c2975fed90:   00000043bc9a18c6 00000275974e1160
+0x000000c2975feda0:   0000000000000000 00007ffc8ba318bd
+0x000000c2975fedb0:   000000c2975fef01 0000000000000000
+0x000000c2975fedc0:   00000275974e1160 0000000000000000
+0x000000c2975fedd0:   0000000000000002 0000026d97800000
+0x000000c2975fede0:   000002759830d360 0000000000000001
+0x000000c2975fedf0:   000002758339acb0 00007ffc8ba30d7e
+0x000000c2975fee00:   0000000000000000 00000275974e1160
+0x000000c2975fee10:   0000000000000000 00007ffd85c1e0fb
+0x000000c2975fee20:   00000043bc9a1836 0000000000000000
+0x000000c2975fee30:   0000000000000000 0000000000000000
+0x000000c2975fee40:   00000275974e1160 000000c2975fefe0
+0x000000c2975fee50:   00000275974e1160 00007ffc8bd8727b
+0x000000c2975fee60:   0000000040000000 00007ffc8c2712d0
+0x000000c2975fee70:   00000275974e1160 0000027597800000
+0x000000c2975fee80:   000000c2975fee90 0000000000001000
+0x000000c2975fee90:   0000027597800000 0000000001000000
+0x000000c2975feea0:   0000000000000000 0000000000010000
+0x000000c2975feeb0:   0000000000001000 ffffffff974e1100
+0x000000c2975feec0:   0000000000000000 00000275974e1160
+0x000000c2975feed0:   0000000000000000 00007ffc8bd8749e
+0x000000c2975feee0:   0000000000000000 0000000001000000
+0x000000c2975feef0:   646e697720726f66 36646d612d73776f
+0x000000c2975fef00:   000000c2975fef10 000000c2975fef90
+0x000000c2975fef10:   0000027597800000 0000000001000000
+0x000000c2975fef20:   0000000000000000 0000000000010000
+0x000000c2975fef30:   0000000000001000 ffffffff974e1100 
+
+Instructions: (pc=0x00007ffc8ba30fce)
+0x00007ffc8ba30ece:   91 66 00 e8 ba ff f6 ff 48 8b 0d e3 02 89 00 48
+0x00007ffc8ba30ede:   85 c9 74 22 44 0f b6 83 b1 02 00 00 48 8d 0d 1f
+0x00007ffc8ba30eee:   c5 66 00 0f b6 93 b0 02 00 00 e8 13 d1 da ff 48
+0x00007ffc8ba30efe:   8b 0d bc 02 89 00 0f b6 05 5f 09 8a 00 38 83 b0
+0x00007ffc8ba30f0e:   02 00 00 75 60 0f b6 05 51 09 8a 00 38 83 b1 02
+0x00007ffc8ba30f1e:   00 00 75 51 80 bb 09 04 00 00 00 75 1f c6 05 4e
+0x00007ffc8ba30f2e:   03 84 00 00 48 85 c9 74 13 48 8d 0d d2 c5 66 00
+0x00007ffc8ba30f3e:   e8 cd d0 da ff 48 8b 0d 76 02 89 00 80 bb 0a 04
+0x00007ffc8ba30f4e:   00 00 00 75 18 c6 05 27 03 84 00 00 48 85 c9 74
+0x00007ffc8ba30f5e:   0c 48 8d 0d 1a c6 66 00 e8 a5 d0 da ff b0 01 48
+0x00007ffc8ba30f6e:   83 c4 20 5b c3 48 8d 0d f6 c4 66 00 e8 71 d0 ff
+0x00007ffc8ba30f7e:   ff 32 c0 48 83 c4 20 5b c3 cc cc cc cc cc cc cc
+0x00007ffc8ba30f8e:   cc cc 48 89 5c 24 10 48 89 6c 24 18 48 89 74 24
+0x00007ffc8ba30f9e:   20 57 48 83 ec 60 48 8b 05 55 3f 86 00 48 33 c4
+0x00007ffc8ba30fae:   48 89 44 24 50 80 3d d6 41 83 00 00 0f b6 ea 48
+0x00007ffc8ba30fbe:   8b f1 74 17 80 39 00 75 12 48 8b 0d f2 56 89 00
+0x00007ffc8ba30fce:   48 8b 01 ff 50 20 48 8b d8 eb 08 48 8b 59 18 48
+0x00007ffc8ba30fde:   83 c3 04 48 83 3d d7 57 89 00 00 40 b7 01 74 0f
+0x00007ffc8ba30fee:   48 8b d3 48 8d 0d 30 ad 66 00 e8 83 01 f1 ff 48
+0x00007ffc8ba30ffe:   8d 54 24 20 48 8b cb e8 26 9c 3a 00 85 c0 74 1c
+0x00007ffc8ba3100e:   40 84 ed 74 17 48 8b d3 48 8d 0d 33 ad 66 00 e8
+0x00007ffc8ba3101e:   ce cf ff ff 40 32 ff e9 ec 00 00 00 80 3e 03 75
+0x00007ffc8ba3102e:   27 48 8b cb e8 69 40 3a 00 84 c0 0f 85 d7 00 00
+0x00007ffc8ba3103e:   00 48 8b d3 48 8d 0d 37 ad 66 00 e8 a2 cf ff ff
+0x00007ffc8ba3104e:   40 32 ff e9 c0 00 00 00 48 8b 56 08 4c 8b 44 24
+0x00007ffc8ba3105e:   40 48 85 d2 74 05 49 3b d0 75 0f 48 63 44 24 34
+0x00007ffc8ba3106e:   48 39 46 10 0f 84 9e 00 00 00 40 32 ff 40 38 3d
+0x00007ffc8ba3107e:   d5 07 8a 00 74 1c 49 3b d0 48 8d 05 12 ad 66 00
+0x00007ffc8ba3108e:   48 8d 0d 23 ad 66 00 48 0f 45 c8 e8 52 cf ff ff
+0x00007ffc8ba3109e:   eb 76 4c 8b c3 48 8d 15 26 ad 66 00 48 8d 0d 77
+0x00007ffc8ba310ae:   e3 62 00 e8 3a cf ff ff 48 83 3d 02 01 89 00 00
+0x00007ffc8ba310be:   4c 8b 05 03 01 89 00 75 22 4d 85 c0 74 1d 4c 8b 
+
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffc8c27b118, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000027585681710 WorkerThread "GC Thread#0" [stack: 0x000000c297600000,0x000000c297700000] [id=24028]
+  0x0000027585684b40 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000c297700000,0x000000c297800000] [id=21952]
+  0x0000027585685480 WorkerThread "G1 Conc#0" [stack: 0x000000c297800000,0x000000c297900000] [id=20540]
+  0x00000275974e24b0 ConcurrentGCThread "G1 Refine#0" [stack: 0x000000c297900000,0x000000c297a00000] [id=19068]
+  0x00000275856f7e50 ConcurrentGCThread "G1 Service" [stack: 0x000000c297a00000,0x000000c297b00000] [id=18612]
+
+=>0x0000027585659560 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=28692, stack(0x000000c297500000,0x000000c297600000)]
+
+Threads with active compile tasks:
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x00000000f8000000, size: 128 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+ CPUs: 8 total, 8 available
+ Memory: 7991M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (32-bit)
+ Heap Region Size: 1M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 126M
+ Heap Max Capacity: 128M
+ Pre-touch: Disabled
+ Parallel Workers: 8
+ Concurrent Workers: 2
+ Concurrent Refinement Workers: 8
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 129024K, used 0K [0x00000000f8000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffc8be347b9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.025 Loaded shared library C:\Program Files\Java\jdk-20\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff67e820000 - 0x00007ff67e830000 	C:\Program Files\Java\jdk-20\bin\java.exe
+0x00007ffd89240000 - 0x00007ffd894a8000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd87030000 - 0x00007ffd870f9000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd867f0000 - 0x00007ffd86be1000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd85c00000 - 0x00007ffd85d4b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffcbd000000 - 0x00007ffcbd01b000 	C:\Program Files\Java\jdk-20\bin\VCRUNTIME140.dll
+0x00007ffcbcfe0000 - 0x00007ffcbcff9000 	C:\Program Files\Java\jdk-20\bin\jli.dll
+0x00007ffd88bf0000 - 0x00007ffd88ca4000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd88860000 - 0x00007ffd88909000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd87860000 - 0x00007ffd87906000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd87c90000 - 0x00007ffd87da8000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd88630000 - 0x00007ffd887f6000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd85b20000 - 0x00007ffd85b47000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd6d0b0000 - 0x00007ffd6d343000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7824_none_3e0870b2e3345462\COMCTL32.dll
+0x00007ffd88bc0000 - 0x00007ffd88beb000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd86bf0000 - 0x00007ffd86d1b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd85ed0000 - 0x00007ffd85f73000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd7dc30000 - 0x00007ffd7dc3b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd89140000 - 0x00007ffd89171000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffceeca0000 - 0x00007ffceecac000 	C:\Program Files\Java\jdk-20\bin\vcruntime140_1.dll
+0x00007ffc92f50000 - 0x00007ffc92fde000 	C:\Program Files\Java\jdk-20\bin\msvcp140.dll
+0x00007ffc8b720000 - 0x00007ffc8c3b8000 	C:\Program Files\Java\jdk-20\bin\server\jvm.dll
+0x00007ffd70070000 - 0x00007ffd700a5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd6d350000 - 0x00007ffd6d35a000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd882a0000 - 0x00007ffd88314000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd848c0000 - 0x00007ffd848db000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffccc300000 - 0x00007ffccc30a000 	C:\Program Files\Java\jdk-20\bin\jimage.dll
+0x00007ffd7d9a0000 - 0x00007ffd7dbe2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd87ea0000 - 0x00007ffd88226000 	C:\WINDOWS\System32\combase.dll
+0x00007ffd87dc0000 - 0x00007ffd87e97000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffd70030000 - 0x00007ffd7006b000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd85b50000 - 0x00007ffd85bf5000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffcbcfb0000 - 0x00007ffcbcfd6000 	C:\Program Files\Java\jdk-20\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-20\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7824_none_3e0870b2e3345462;C:\Program Files\Java\jdk-20\bin\server
+
+VM Arguments:
+jvm_args: -Xmx128m 
+java_command: org.apache.spark.launcher.Main org.apache.spark.deploy.SparkSubmit --conf spark.driver.host=127.0.0.1 pyspark-shell
+java_class_path (initial): C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\aircompressor-2.0.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\algebra_2.13-2.8.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\antlr-runtime-3.5.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\antlr4-runtime-4.13.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\aopalliance-repackaged-3.0.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arpack-3.0.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arpack_combined_all-0.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arrow-compression-18.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arrow-format-18.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arrow-memory-core-18.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arrow-memory-netty-18.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arrow-memory-netty-buffer-patch-18.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\arrow-vector-18.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\audience-annotations-0.12.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\avro-1.12.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\avro-ipc-1.12.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\avro-mapred-1.12.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\blas-3.0.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\breeze-macros_2.13-2.1.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\breeze_2.13-2.1.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\cats-kernel_2.13-2.8.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\chill-java-0.10.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\chill_2.13-0.10.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-cli-1.10.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-codec-1.19.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-collections4-4.5.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-compiler-3.1.9.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-compress-1.28.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-crypto-1.1.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-dbcp-1.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-io-2.21.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-lang-2.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-lang3-3.19.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-math3-3.6.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-pool-1.5.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\commons-text-1.14.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\compress-lzf-1.1.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\curator-client-5.9.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\curator-framework-5.9.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\curator-recipes-5.9.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\datanucleus-api-jdo-4.2.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\datanucleus-core-4.1.17.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\datanucleus-rdbms-4.1.19.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\datasketches-java-6.2.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\datasketches-memory-3.0.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\derby-10.16.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\derbyshared-10.16.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\derbytools-10.16.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\dropwizard-metrics-hadoop-metrics2-reporter-0.1.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\failureaccess-1.0.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\flatbuffers-java-25.2.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\gson-2.11.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\guava-33.4.8-jre.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hadoop-client-api-3.4.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hadoop-client-runtime-3.4.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\HikariCP-2.5.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-beeline-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-cli-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-common-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-exec-2.3.10-core.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-jdbc-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-metastore-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-serde-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-service-rpc-4.0.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-shims-0.23-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-shims-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-shims-common-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-shims-scheduler-2.3.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hive-storage-api-2.8.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hk2-api-3.0.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hk2-locator-3.0.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\hk2-utils-3.0.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\httpclient-4.5.14.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\httpcore-4.4.16.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\icu4j-77.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\istack-commons-runtime-4.1.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\ivy-2.5.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jackson-annotations-2.20.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jackson-core-2.20.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jackson-databind-2.20.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jackson-dataformat-yaml-2.20.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jackson-datatype-jsr310-2.20.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jackson-module-scala_2.13-2.20.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jakarta.activation-api-2.1.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jakarta.annotation-api-2.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jakarta.inject-api-2.0.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jakarta.servlet-api-5.0.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jakarta.validation-api-3.0.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jakarta.ws.rs-api-3.0.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jakarta.xml.bind-api-4.0.2.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\janino-3.1.9.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\java-diff-utils-4.16.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\javassist-3.30.2-GA.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\javax.jdo-3.2.0-m3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\javax.servlet-api-4.0.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\javolution-5.5.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jaxb-core-4.0.5.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jaxb-runtime-4.0.5.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jcl-over-slf4j-2.0.17.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jdo-api-3.0.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jersey-client-3.0.18.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jersey-common-3.0.18.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jersey-container-servlet-3.0.18.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jersey-container-servlet-core-3.0.18.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jersey-hk2-3.0.18.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jersey-server-3.0.18.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jjwt-api-0.12.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jjwt-impl-0.12.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jjwt-jackson-0.12.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\JLargeArrays-1.5.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jline-2.14.6.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jline-3.29.0-jdk8.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\joda-time-2.14.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jpam-1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\json-1.8.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\json4s-ast_2.13-4.0.7.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\json4s-core_2.13-4.0.7.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\json4s-jackson-core_2.13-4.0.7.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\json4s-jackson_2.13-4.0.7.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\json4s-scalap_2.13-4.0.7.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jsr305-3.0.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jta-1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\JTransforms-3.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jts-core-1.20.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\jul-to-slf4j-2.0.17.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kryo-shaded-4.0.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-client-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-client-api-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-httpclient-vertx-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-admissionregistration-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-apiextensions-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-apps-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-autoscaling-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-batch-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-certificates-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-common-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-coordination-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-core-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-discovery-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-events-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-extensions-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-flowcontrol-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-gatewayapi-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-metrics-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-networking-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-node-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-policy-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-rbac-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-resource-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-scheduling-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\kubernetes-model-storageclass-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\lapack-3.0.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\leveldbjni-all-1.8.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\libfb303-0.9.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\libthrift-0.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\log4j-1.2-api-2.24.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\log4j-api-2.24.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\log4j-core-2.24.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\log4j-layout-template-json-2.24.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\log4j-slf4j2-impl-2.24.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\lz4-java-1.8.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\metrics-core-4.2.37.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\metrics-graphite-4.2.37.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\metrics-jmx-4.2.37.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\metrics-json-4.2.37.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\metrics-jvm-4.2.37.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\minlog-1.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-all-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-buffer-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-base-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-classes-quic-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-compression-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-dns-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-http-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-http2-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-http3-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-marshalling-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-native-quic-4.2.7.Final-linux-aarch_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-native-quic-4.2.7.Final-linux-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-native-quic-4.2.7.Final-osx-aarch_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-native-quic-4.2.7.Final-osx-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-native-quic-4.2.7.Final-windows-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-protobuf-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-codec-socks-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-common-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-handler-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-handler-proxy-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-resolver-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-resolver-dns-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-tcnative-boringssl-static-2.0.74.Final-linux-aarch_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-tcnative-boringssl-static-2.0.74.Final-linux-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-tcnative-boringssl-static-2.0.74.Final-osx-aarch_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-tcnative-boringssl-static-2.0.74.Final-osx-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-tcnative-boringssl-static-2.0.74.Final-windows-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-tcnative-classes-2.0.74.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-classes-epoll-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-classes-io_uring-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-classes-kqueue-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-epoll-4.2.7.Final-linux-aarch_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-epoll-4.2.7.Final-linux-riscv64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-epoll-4.2.7.Final-linux-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-io_uring-4.2.7.Final-linux-aarch_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-io_uring-4.2.7.Final-linux-riscv64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-io_uring-4.2.7.Final-linux-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-kqueue-4.2.7.Final-osx-aarch_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-kqueue-4.2.7.Final-osx-x86_64.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\netty-transport-native-unix-common-4.2.7.Final.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\objenesis-3.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\opencsv-2.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\orc-core-2.2.1-shaded-protobuf.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\orc-format-1.1.1-shaded-protobuf.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\orc-mapreduce-2.2.1-shaded-protobuf.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\orc-shims-2.2.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\oro-2.0.8.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\osgi-resource-locator-1.0.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\paranamer-2.8.3.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\parquet-column-1.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\parquet-common-1.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\parquet-encoding-1.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\parquet-format-structures-1.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\parquet-hadoop-1.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\parquet-jackson-1.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\pickle-1.5.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\py4j-0.10.9.9.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\RoaringBitmap-1.3.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\rocksdbjni-9.8.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\scala-compiler-2.13.17.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\scala-library-2.13.17.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\scala-parallel-collections_2.13-1.2.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\scala-parser-combinators_2.13-2.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\scala-reflect-2.13.17.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\scala-xml_2.13-2.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\slf4j-api-2.0.17.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\snakeyaml-2.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\snakeyaml-engine-2.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\snappy-java-1.1.10.8.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-catalyst_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-common-utils-java_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-common-utils_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-connect_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-core_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-graphx_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-hive-thriftserver_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-hive_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-kubernetes_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-kvstore_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-launcher_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-mllib-local_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-mllib_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-network-common_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-network-shuffle_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-pipelines_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-repl_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-sketch_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-sql-api_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-sql_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-streaming_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-tags_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-unsafe_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-variant_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spark-yarn_2.13-4.1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spire-macros_2.13-0.18.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spire-platform_2.13-0.18.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spire-util_2.13-0.18.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\spire_2.13-0.18.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\ST4-4.0.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\stax-api-1.0.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\stream-2.9.8.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\super-csv-2.2.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\threeten-extra-1.8.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\tink-1.16.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\transaction-api-1.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\univocity-parsers-2.9.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\vertx-auth-common-4.5.14.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\vertx-core-4.5.14.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\vertx-web-client-4.5.14.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\vertx-web-common-4.5.14.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\xbean-asm9-shaded-4.28.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\xmlschema-core-2.3.1.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\xz-1.10.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\zjsonpatch-7.4.0.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\zookeeper-3.9.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\zookeeper-jute-3.9.4.jar;C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Lib\site-packages\pyspark\bin\..\jars\zstd-jni-1.5.7-6.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 134217728                                 {product} {command line}
+   size_t MaxNewSize                               = 79691776                                  {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 134217728                              {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-20
+PATH=C:\Users\sanja\OneDrive\Desktop\NEU\mlops\mlflow\.venv\Scripts;C:\Users\sanja\AppData\Local\Programs\Microsoft VS Code;C:\Users\sanja\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Python 3.12;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Neovim\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\sanja\AppData\Local\Microsoft\WindowsApps;C:\Users\sanja\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\sanja\OneDrive\Desktop\keycloak\keycloak-22.0.4\bin;C:\Program Files\Java\jdk-20\bin;C:\MinGW\bin;C:\Program Files\Git\bin;C:\Users\sanja\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts;C:\Users\sanja\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Users\sanja\AppData\Local\Programs\MiKTeX\miktex\bin\x64;;C:\Users\sanja\.bun\bin;c:\Users\sanja\.vscode\extensions\ms-python.debugpy-2025.18.0-win32-x64\bundled\scripts\noConfigScripts
+USERNAME=sanja
+LANG=en_US.UTF-8
+TERM=xterm-color
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\sanja\AppData\Local\Temp
+TEMP=C:\Users\sanja\AppData\Local\Temp
+
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.7705)
+OS uptime: 9 days 7:27 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0x52, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, hv, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, cet_ibt, cet_ss, avx512_ifma
+
+Memory: 4k page, system-wide physical 7991M (1041M free)
+TotalPageFile size 23206M (AvailPageFile size 520M)
+current process WorkingSet (physical memory assigned to process): 25M, peak: 25M
+current process commit charge ("private bytes"): 201M, peak: 201M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (20.0.2+9-78) for windows-amd64 JRE (20.0.2+9-78), built on 2023-06-14T10:08:48Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.

@@ -1,0 +1,37 @@
+artifact_path: file:C:/Users/sanja/OneDrive/Desktop/NEU/mlops/mlflow/mlruns/0/models/m-c0f22f0c1c7e4f288a846effcbd5d44c/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.10
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.core.Booster
+    model_format: ubj
+    xgb_version: 1.7.6
+is_signature_from_type_hint: false
+mlflow_version: 3.10.1
+model_id: m-c0f22f0c1c7e4f288a846effcbd5d44c
+model_size_bytes: 278597
+model_uuid: m-c0f22f0c1c7e4f288a846effcbd5d44c
+prompts: null
+run_id: 99bc46d74d1447d598fd370239c06703
+signature:
+  inputs: '[{"type": "double", "name": "fixed_acidity", "required": true}, {"type":
+    "double", "name": "volatile_acidity", "required": true}, {"type": "double", "name":
+    "citric_acid", "required": true}, {"type": "double", "name": "residual_sugar",
+    "required": true}, {"type": "double", "name": "chlorides", "required": true},
+    {"type": "double", "name": "free_sulfur_dioxide", "required": true}, {"type":
+    "double", "name": "total_sulfur_dioxide", "required": true}, {"type": "double",
+    "name": "density", "required": true}, {"type": "double", "name": "pH", "required":
+    true}, {"type": "double", "name": "sulphates", "required": true}, {"type": "double",
+    "name": "alcohol", "required": true}, {"type": "long", "name": "is_red", "required":
+    true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-03-14 03:01:45.982044'
